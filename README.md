@@ -1,9 +1,92 @@
-# aws-financial-data-pipeline
-## Architecture Implemented
+# \# AWS Financial Data Pipeline
 
-- S3 Data Lake (raw / processed / processed_partitioned)
-- Data cleaning and normalization in Python
-- Hive-style partitioning by year
-- Athena external table
-- Athena partitioned table with MSCK REPAIR
-- Query performance optimization via partition pruning
+# 
+
+# End-to-end data engineering project using the Modern Data Stack.
+
+# 
+
+# \## Architecture
+
+# 
+
+# CSV → Python ETL → S3 Data Lake → Athena → dbt Transformations
+
+# 
+
+# \## Stack
+
+# 
+
+# \- Python
+
+# \- AWS S3
+
+# \- AWS Athena
+
+# \- dbt
+
+# \- Parquet
+
+# \- SQL
+
+# 
+
+# \## Features
+
+# 
+
+# \- Raw financial dataset ingestion
+
+# \- Data cleaning with Python
+
+# \- Storage in S3 Data Lake
+
+# \- Querying with Athena
+
+# \- Data transformations with dbt
+
+# \- Data quality tests
+
+# \- Documentation with dbt docs
+
+# 
+
+# \## Project Structure
+
+# 
+
+# aws-financial-data-pipeline
+
+# │
+
+# ├── data
+
+# ├── scripts
+
+# ├── financial\_dbt
+
+# ├── Dockerfile
+
+# ├── requirements.txt
+
+# └── README.md
+
+# 
+
+# \## Status
+
+# 
+
+# Work in progress.
+
+# 
+
+# Next steps:
+
+# \- Airflow orchestration
+
+# \- Terraform infrastructure
+
+# \- CI/CD pipeline
+
