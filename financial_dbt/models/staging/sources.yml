@@ -1,0 +1,9 @@
+version: 2
+
+sources:
+  - name: financial_raw
+    database: AwsDataCatalog
+    schema: financial_data_lake
+
+    tables:
+      - name: processed_finance_parquet

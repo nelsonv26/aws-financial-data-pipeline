@@ -1,0 +1,13 @@
+version: 2
+
+models:
+  - name: stg_financial_data
+    columns:
+
+      - name: date
+        tests:
+          - not_null
+
+      - name: revenue
+        tests:
+          - not_null
