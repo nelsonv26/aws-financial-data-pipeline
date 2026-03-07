@@ -1,7 +1,7 @@
 version: 2
 
 sources:
-  - name: financial_raw
+  - name: financial_data_lake
     database: AwsDataCatalog
     schema: financial_data_lake
 

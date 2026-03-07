@@ -1,2 +1,27 @@
-SELECT *
-FROM {{ source('financial_raw','processed_finance_parquet') }}
+SELECT
+    CAST(date AS DATE) AS date,
+    stock_index,
+    open_price,
+    close_price,
+    daily_high,
+    daily_low,
+    trading_volume,
+    gdp_growth,
+    inflation_rate,
+    unemployment_rate,
+    interest_rate,
+    consumer_confidence_index,
+    government_debt,
+    corporate_profits,
+    forex_usd_eur,
+    forex_usd_jpy,
+    crude_oil_price,
+    gold_price,
+    real_estate_index,
+    retail_sales,
+    bankruptcy_rate,
+    mergers_acquisitions_deals,
+    venture_capital_funding,
+    consumer_spending,
+    year
+FROM {{ source('financial_data_lake', 'processed_finance_parquet') }}

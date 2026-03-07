@@ -1,5 +1,11 @@
 version: 2
 
+sources:
+  - name: finance_raw
+    database: AwsDataCatalog
+    schema: financial_data_lake
+    tables:
+      - name: processed_finance_partitioned
 models:
   - name: stg_financial_data
     columns:
@@ -8,6 +14,14 @@ models:
         tests:
           - not_null
 
-      - name: revenue
+      - name: stock_index
+        tests:
+          - not_null
+
+      - name: close_price
+        tests:
+          - not_null
+
+      - name: trading_volume
         tests:
           - not_null
