@@ -1,0 +1,14 @@
+version: 2
+
+models:
+  - name: mart_financial_metrics
+    description: "Aggregated financial metrics by stock index and year"
+
+    columns:
+      - name: stock_index
+        tests:
+          - not_null
+
+      - name: year
+        tests:
+          - not_null
