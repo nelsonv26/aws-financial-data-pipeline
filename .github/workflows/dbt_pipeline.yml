@@ -11,22 +11,27 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
+      - name: Checkout repository
+        uses: actions/checkout@v3
 
-    - name: Checkout repo
-      uses: actions/checkout@v3
+      - name: Setup Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: "3.10"
 
-    - name: Setup Python
-      uses: actions/setup-python@v4
-      with:
-        python-version: '3.10'
+      - name: Install dependencies
+        run: |
+          pip install dbt-core
+          pip install dbt-athena
 
-    - name: Install dbt
-      run: |
-        pip install dbt-core
-        pip install dbt-athena-community
+      - name: Run dbt deps
+        run: dbt deps
+        working-directory: financial_dbt
 
-    - name: Run dbt tests
-      run: |
-        dbt deps
-        dbt run
-        dbt test
+      - name: Run dbt models
+        run: dbt run
+        working-directory: financial_dbt
+
+      - name: Run dbt tests
+        run: dbt test
+        working-directory: financial_dbt
