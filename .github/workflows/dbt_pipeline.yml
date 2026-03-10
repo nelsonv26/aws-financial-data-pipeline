@@ -40,9 +40,8 @@ jobs:
               dev:
                 type: athena
                 region_name: us-east-1
-                aws_data_catalog: AwsDataCatalog
-                database: financial_data_lake
-                schema: default
+                database: AwsDataCatalog
+                schema: financial_data_lake
                 s3_staging_dir: s3://nelson-financial-data-lake-001/
                 work_group: primary
           EOF
