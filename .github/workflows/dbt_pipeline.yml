@@ -5,13 +5,11 @@ on:
     branches: [ main ]
 
 jobs:
-
-  dbt-tests:
-
+  dbt-run:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Checkout repository
+      - name: Checkout repo
         uses: actions/checkout@v3
 
       - name: Setup Python
@@ -19,19 +17,35 @@ jobs:
         with:
           python-version: "3.10"
 
-      - name: Install dependencies
+      - name: Install dbt and adapter
         run: |
           pip install dbt-core
-          pip install dbt-athena
+          pip install dbt-athena-community
+
+      - name: Create dbt profiles.yml
+        run: |
+          mkdir -p ~/.dbt
+          cat <<EOF > ~/.dbt/profiles.yml
+          financial_dbt:
+            target: dev
+            outputs:
+              dev:
+                type: athena
+                region_name: us-east-1
+                database: financial_data_lake
+                schema: default
+                s3_staging_dir: s3://nelson-financial-data-lake-001/
+                work_group: primary
+          EOF
 
       - name: Run dbt deps
-        run: dbt deps
         working-directory: financial_dbt
+        run: dbt deps
 
       - name: Run dbt models
-        run: dbt run
         working-directory: financial_dbt
+        run: dbt run
 
       - name: Run dbt tests
-        run: dbt test
         working-directory: financial_dbt
+        run: dbt test
