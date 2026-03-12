@@ -1,92 +1,98 @@
-# \# AWS Financial Data Pipeline
+# Financial Data Lake Analytics Pipeline
 
-# 
+This project demonstrates a **modern cloud-based data engineering pipeline** built on AWS.
+It ingests raw financial data, processes it through an ETL pipeline, transforms it using dbt, and visualizes insights through a BI dashboard.
 
-# End-to-end data engineering project using the Modern Data Stack.
+---
 
-# 
+## Architecture
 
-# \## Architecture
+![Architecture](docs/architecture.png)
 
-# 
+---
 
-# CSV → Python ETL → S3 Data Lake → Athena → dbt Transformations
+## Tech Stack
 
-# 
+* Python (ETL pipeline)
+* AWS S3 (Data Lake storage)
+* Amazon Athena (Serverless SQL queries)
+* dbt (Data transformations)
+* GitHub Actions (CI/CD automation)
+* Amazon QuickSight (Business Intelligence dashboard)
 
-# \## Stack
+---
 
-# 
+## Project Workflow
 
-# \- Python
+1. Raw financial data is ingested as CSV files.
+2. Python scripts clean and prepare the dataset.
+3. Cleaned data is stored in an AWS S3 data lake.
+4. Amazon Athena queries the data directly from S3.
+5. dbt transforms the data into analytics-ready tables.
+6. GitHub Actions automatically runs dbt pipelines on every commit.
+7. Amazon QuickSight visualizes insights through dashboards.
 
-# \- AWS S3
+---
 
-# \- AWS Athena
+## Key Features
 
-# \- dbt
+* Serverless cloud architecture
+* Automated data transformations with dbt
+* CI/CD pipeline for analytics workflows
+* Data lake architecture
+* Interactive BI dashboards
 
-# \- Parquet
+---
 
-# \- SQL
+## Repository Structure
 
-# 
+```
+aws-financial-data-pipeline/
 
-# \## Features
+data/
+raw financial datasets
 
-# 
+etl/
+python data cleaning scripts
 
-# \- Raw financial dataset ingestion
+financial_dbt/
+dbt models and transformations
 
-# \- Data cleaning with Python
+terraform/
+infrastructure as code
 
-# \- Storage in S3 Data Lake
+.github/workflows/
+CI/CD pipelines
 
-# \- Querying with Athena
+docs/
+architecture diagram and documentation
+```
 
-# \- Data transformations with dbt
+---
 
-# \- Data quality tests
+## Example Analytics
 
-# \- Documentation with dbt docs
+The pipeline generates analytics tables such as:
 
-# 
+* Revenue by region
+* Daily revenue trends
+* Transaction volume
+* Average transaction value
 
-# \## Project Structure
+These tables power the BI dashboard.
 
-# 
+---
 
-# aws-financial-data-pipeline
+## Future Improvements
 
-# │
+* Machine learning revenue forecasting
+* Data quality monitoring
+* Automated anomaly detection
+* Streaming ingestion pipeline
 
-# ├── data
+---
 
-# ├── scripts
+## Author
 
-# ├── financial\_dbt
-
-# ├── Dockerfile
-
-# ├── requirements.txt
-
-# └── README.md
-
-# 
-
-# \## Status
-
-# 
-
-# Work in progress.
-
-# 
-
-# Next steps:
-
-# \- Airflow orchestration
-
-# \- Terraform infrastructure
-
-# \- CI/CD pipeline
-
+Nelson Villalba
+Data & Automation Projects
