@@ -7,8 +7,10 @@ services:
     ports:
       - "8088:8088"
     environment:
-      - SUPERSET_SECRET_KEY=UDtW8VG9q_OAUZh_NcvahIlzUKVxIsw2tAnpKms6KOE
-      - AWS_DEFAULT_REGION=us-east-1
+      - SUPERSET_SECRET_KEY
+      - AWS_ACCESS_KEY_ID
+      - AWS_SECRET_ACCESS_KEY
+      - AWS_DEFAULT_REGION
     volumes:
       - ./superset_home:/app/superset_home
       - C:\Users\nelso\.aws:/root/.aws
