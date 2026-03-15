@@ -1,7 +1,7 @@
 # Financial Data Lake Analytics Pipeline
 
 This project demonstrates a **modern cloud-based data engineering pipeline** built on AWS.
-It ingests raw financial data, processes it through an ETL pipeline, transforms it using dbt, and visualizes insights through a BI dashboard.
+It ingests raw financial data, processes it through an ETL pipeline, transforms it using dbt, and visualizes insights through a BI dashboard in Apache Superset.
 
 ---
 
@@ -17,8 +17,10 @@ It ingests raw financial data, processes it through an ETL pipeline, transforms 
 * AWS S3 (Data Lake storage)
 * Amazon Athena (Serverless SQL queries)
 * dbt (Data transformations)
+* Terraform
 * GitHub Actions (CI/CD automation)
-* Amazon QuickSight (Business Intelligence dashboard)
+* Apache Superset
+* Docker
 
 ---
 
@@ -41,6 +43,14 @@ It ingests raw financial data, processes it through an ETL pipeline, transforms 
 * CI/CD pipeline for analytics workflows
 * Data lake architecture
 * Interactive BI dashboards
+
+---
+
+## Financial Analytics Dashboard
+
+Dashboard built with Apache Superset using data queried from AWS Athena.
+
+![Dashboard](assets/superset-dashboard.png)
 
 ---
 
